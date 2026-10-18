@@ -5,7 +5,7 @@
 
 <p align="center">
 <a href="https://emirgezer.com">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&duration=3500&size=20&pause=1000&color=34C997&center=true&vCenter=true&width=520&height=36&lines=WELCOME+TO+MY+PROFILE!;emirgezer.com;Secure.+Scalable.+Reliable+software." alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&duration=3500&size=20&pause=1000&color=34C997&center=true&vCenter=true&width=520&height=36&lines=WELCOME+TO+MY+PROFILE!;emirgezer.com" alt="Typing SVG" />
 </a>
 <br>
 <img src="https://raw.githubusercontent.com/mirusware/mirusware/main/assets/divider-h.svg" width="80%" height="3" alt="">
