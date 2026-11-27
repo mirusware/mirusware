@@ -7,7 +7,7 @@ const OFFSET = Number(process.env.UTC_OFFSET || 0);
 const OUT = process.env.OUT_DIR || 'cards';
 const TOKEN = process.env.GH_TOKEN;
 
-const C = { accent: '#34C997', deep: '#0B8A5F', text: '#8B8B92', grid: '#8B8B92' };
+const C = { accent: '#FFFFFF', deep: '#FFFFFF', text: '#8B8B92', grid: '#8B8B92' };
 const FONT = `font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', sans-serif"`;
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
