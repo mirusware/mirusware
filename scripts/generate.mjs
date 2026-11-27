@@ -1,5 +1,5 @@
-// Emerald profile cards: productive-time + profile-details.
-// Usage: GH_TOKEN=... USERNAME=mirusware UTC_OFFSET=0 node scripts/generate.mjs   (MOCK=1 for fake data)
+// Profile cards: productive-time + profile-details.
+// Usage: GH_TOKEN=... USERNAME=mirusware UTC_OFFSET=0 node scripts/generate.mjs
 import { writeFileSync, mkdirSync } from 'node:fs';
 
 const USER = process.env.USERNAME || 'mirusware';
@@ -7,7 +7,7 @@ const OFFSET = Number(process.env.UTC_OFFSET || 0);
 const OUT = process.env.OUT_DIR || 'cards';
 const TOKEN = process.env.GH_TOKEN;
 
-const C = { accent: '#FFFFFF', deep: '#FFFFFF', text: '#8B8B92', grid: '#8B8B92' };
+const C = { accent: '#FFFFFF', text: '#8B8B92', grid: '#8B8B92' };
 const FONT = `font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', sans-serif"`;
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
@@ -23,11 +23,6 @@ async function gql(query, variables) {
 }
 
 async function load() {
-  if (process.env.MOCK) {
-    const hours = Array.from({ length: 24 }, (_, h) => [0, 0, 0, 0, 0, 0, 0, 3, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 4, 0, 0, 1, 0, 3][h]);
-    const weeks = Array.from({ length: 53 }, (_, i) => Math.max(0, Math.round(6 + 5 * Math.sin(i / 5) + (i > 40 ? 8 : 0))));
-    return { name: 'Emir Miraç Gezer', login: USER, joined: 2025, followers: 3, repos: 6, total: weeks.reduce((a, b) => a + b, 0), hours, weeks };
-  }
   const to = new Date(), from = new Date(to); from.setFullYear(to.getFullYear() - 1);
   const base = await gql(`query($l:String!,$f:DateTime!,$t:DateTime!){ user(login:$l){ id name login createdAt
     followers{totalCount} repositories(ownerAffiliations:OWNER,isFork:false){totalCount}
